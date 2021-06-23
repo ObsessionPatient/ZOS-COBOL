@@ -3,7 +3,6 @@ import { Button, Input, message } from 'antd';
 import axios from 'axios'
 import 'antd/dist/antd.dark.css';
 
-
 const { TextArea } = Input;
 
 export default class MemDetail extends Component {
@@ -121,6 +120,8 @@ export default class MemDetail extends Component {
           </div>
           <TextArea rows={10} defaultValue={this.state.content} disabled style={{ color: 'white' }}></TextArea>
           <Button onClick={() => this.onClick()} style={{ marginTop: 20 }}>运行</Button>
+          <p style={{marginTop: 25}}>jobName: {this.state.jobName}</p>
+          <p>jobId: {this.state.jobId}</p>
           <TextArea rows={1} defaultValue="请输入查询的id" onChange={event => this.onIdChange(event)} style={{ marginTop: 20 }} />
           <Button onClick={() => this.onSearchClick()} style={{ marginTop: 20 }}>查询</Button>
           <TextArea rows={10} defaultValue={this.state.result} disabled style={{ marginTop: 20, color: 'white' }} />
