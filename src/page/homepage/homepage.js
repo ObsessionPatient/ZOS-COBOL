@@ -56,8 +56,8 @@ export default class Homepage extends Component {
     // console.log("准备")
     var token = JSON.parse(localStorage.getItem('token')).token
     axios({
-      method: "get",
-      url: 'http://localhost:8080/sms/getdslist?dsName=' + name,
+      method: "delete",
+      url: 'http://localhost:8080/sms/deleteds?dsName=' + name,
       headers: {
         "Authorization": token
       }

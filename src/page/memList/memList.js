@@ -3,13 +3,13 @@ import { Table, message } from 'antd';
 import axios from 'axios'
 import 'antd/dist/antd.dark.css';
 import { Link } from 'react-router-dom'
+import MemDetail from '../memDetail/memDetail'
 
 export default class MemList extends Component {
   constructor(props) {
     super(props)
     this.state = {
       memList: [],
-      //name: props.location.state.name,
       name: props.location.search,
     }
     console.log(this.state.name.split("=")[1])
@@ -65,7 +65,7 @@ export default class MemList extends Component {
   deleteMem(mem) {
     var token = JSON.parse(localStorage.getItem('token')).token
     axios({
-      method: "get",
+      method: "delete",
       url: 'http://localhost:8080/sms/deletepdsmember?dsName=' + this.state.name + '(' + mem + ')',
       headers: {
         "Authorization": token
